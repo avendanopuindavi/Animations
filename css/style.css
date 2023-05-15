@@ -23,11 +23,17 @@ body {
 
 
 section {
+    position: relative;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
+
     /* background-color: var(--t3); */
+}
+.page-end {
+
+    margin-bottom: 100px;
 }
 .holder {
     width: 80%;
@@ -62,7 +68,7 @@ section {
 }
 
 @keyframes up {
-    0% {
+    0%,100% {
         transform: translate(0);
     }
     40% {
@@ -78,9 +84,6 @@ section {
     80% {
         transform: translate(0,-20px);
     }
-    100% {
-        transform: translate(0);
-    } 
 }
 
 
@@ -94,6 +97,7 @@ section {
     position: relative;
     /* background-color: var(--t4); */
 }
+
 
 .ball {
     width: 50px;
@@ -171,15 +175,11 @@ section {
 }
 
 /* THIRD ANIMATION */
-.animation {
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    margin: 30px auto;
-    display: flex;
-    position: relative;
+.animation2 {
+    animation: 4s rotation infinite;
     /* background-color: var(--t4); */
 }
+
 
 .ball-b {
     width: 50px;
@@ -249,13 +249,105 @@ section {
 }
 
 .ball-b {
-    animation-delay: calc((var(--n) - 1) * .375s);
+    animation-delay: calc((var(--n) - 1) * 1.5s);
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+}
+/* FOURTH ANIMATION */
+
+
+.ball-c {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--t1);
+    position: absolute;
+
+}
+
+.ball-c1 {
+    --n: 1;
+    top: 175px;
+    left: 0;
+    animation: lateralA;
+    animation-duration: .75s;
+
+}
+
+.ball-c2 {
+    --n: 3;
+    top: 0%;
+    left: 175px;
+    animation: verticalA;
+}
+
+.ball-c3 {
+    --n: 7;
+    bottom: 0;
+    left: 175px;
+    animation: verticalB;
+}
+
+.ball-c4 {
+    --n: 5;
+    top: 175px;
+    right: 0%;
+    animation: lateralB;
+}
+
+.ball-c5 {
+    --n: 2;
+    top: 51px;
+    left: 51px;
+    animation: diagonalTopR;
+}
+
+.ball-c6 {
+    --n: 4;
+    top: 51px;
+    right: 51px;
+    animation: diagonalTopL;
+}
+
+.ball-c7 {
+    --n: 6;
+    bottom: 51px;
+    right: 51px;
+    animation: diagonalBottomL;
+}
+
+.ball-c8 {
+    --n: 8;
+    bottom: 51px;
+    left: 51px;
+    animation: diagonalBottomR;
+}
+
+.ball-c {
+    animation-delay: calc((var(--n) - 1) * 0.75s);
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 
 }
 
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    33% {
+        transform: rotate(180deg);
+    }
+    66% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 @keyframes lateralA {
 
     0% {
